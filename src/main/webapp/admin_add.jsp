@@ -17,7 +17,7 @@ body {
 
 <body>
 <div class="mian_4">
-  <form id="form1" name="form1" method="post" action="admin_add.jsp">
+  <form id="form1" name="form1" method="post" action="admin_add">
     <table width="95%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#666666">
       <tbody>
         <tr>
@@ -28,22 +28,22 @@ body {
               <tbody>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#F1F5F8'" bgcolor="#F1F5F8">
                   <td height="25" width="34%">管理员帐号</td>
-                  <td width="66%"><input name="userid" type="text" size="30" />
+                  <td width="66%"><input name="userId" type="text" size="30" />
                     &nbsp;* (请勿使用中文!)</td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
                   <td width="34%" height="13">登陆密码</td>
-                  <td><input name="password" type="password" size="30" />
+                  <td><input name="userPwd" type="password" size="30" />
                     &nbsp;*</td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#F1F5F8'" bgcolor="#F1F5F8">
                   <td width="34%" height="12">确认密码</td>
-                  <td><input name="password3" type="password" size="30" />
+                  <td><input name="userPwdRe" type="password" size="30" />
                     &nbsp;*</td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
                   <td height="25" width="34%">真实姓名</td>
-                  <td><input name="username" type="text" size="30" value=""/>
+                  <td><input name="userName" type="text" size="30" value=""/>
                   &nbsp;</td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
@@ -58,15 +58,15 @@ body {
   </form>
 </div>
 <script type="text/javascript">
-	function addUser()
-	{
-		if(form1.password.value != form1.password3.value)
-		{
-			alert("两次输入的密码不同");
-			return;
-		}
-		form1.submit();
-	};
+//	function addUser()
+//	{
+//		if(form1.userPwd.value != form1.userPwdRe.value)
+//		{
+//			alert("两次输入的密码不同");
+//			return;
+//		}
+//		form1.submit();
+//	};
 </script>
 </body>
 </html>

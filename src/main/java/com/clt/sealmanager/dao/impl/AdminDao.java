@@ -17,7 +17,6 @@ public class AdminDao implements IAdminDao {
     }
     @Override
     public Admin findAdminById(String id) {
-
         Admin adminBack = null;
         try {
             adminBack = getAdminDao().findAdminById(id);
@@ -29,28 +28,35 @@ public class AdminDao implements IAdminDao {
         }
         return null;
     }
-//    @Override
-//    public List<Admin> findAllAdmin() {
-//        List<Admin> admin_list = null;
-//        try {
-//            admin_list = getAdminDao().findAllAdmin();
-//            if (admin_list != null){
-//                return admin_list;
-//            }
-//        } finally {
-//            session.close();
-//        }
-//        return null;
-//    }
-//
     @Override
-    public void addAdmin(Admin admin) {
+    public List<Admin> findAllAdmin() {
+        List<Admin> admin_list = null;
         try {
-
-            getAdminDao().addAdmin(admin);
-
+            admin_list = getAdminDao().findAllAdmin();
+            if (admin_list != null){
+                return admin_list;
+            }
         } finally {
             session.close();
         }
+        return null;
+    }
+    @Override
+    public void addAdmin(Admin admin) {
+        try {
+            getAdminDao().addAdmin(admin);
+            session.commit();
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public void updateAdmin(Admin admin) {
+
+    }
+    @Override
+    public void deleteAdmin(String id) {
+
     }
 }

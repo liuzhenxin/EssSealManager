@@ -12,8 +12,12 @@ public interface IAdminDao {
     Admin findAdminById(String id);
 //
 //    @Select("select * from admins")
-//    List<Admin> findAllAdmin();
+    List<Admin> findAllAdmin();
 //
 //    @Insert("insert into admins(userid,username,userpwd,userstatus}) values(#{userId},#{userName},#{userPwd},#{userStatus})")
-    public void addAdmin(Admin admin);
+    void addAdmin(Admin admin);
+
+    void updateAdmin(Admin admin);
+
+    void deleteAdmin(String id);
 }

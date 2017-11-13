@@ -7,13 +7,27 @@
         SELECT * FROM ADMINS WHERE USERID =#{id}
     </select>
 
-    <!--<select id="findAllAdmin" resultMap="Admin">-->
-        <!--SELECT * FROM ADMINS-->
-    <!--</select>-->
+    <select id="findAllAdmin" resultType="Admin">
+        SELECT * FROM ADMINS
+    </select>
 
     <insert id="addAdmin" parameterType="Admin" >
-        INSERT INTO USER(userid,username, userpwd,userstatus)
+        INSERT INTO ADMINS (userid,username,userpwd,userstatus)
         VALUES(#{userId}, #{userName}, #{userPwd}, #{userStatus})
     </insert>
 
+    <update id="updateAdmin" parameterType="Admin">
+        UPDATE ADMINS
+        SET
+        username = #{userName},
+        userpwd = #{userPwd},
+        userstatus = #{userStatus}
+        WHERE
+        userid =
+        #{userId}
+    </update>
+
+    <delete id="deleteAdmin" parameterType="String">
+        DELETE FROM USER WHERE userid = #{id}
+    </delete>
 </mapper>

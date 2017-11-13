@@ -1,20 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
-<%@ page import="com.clt.mysql.*"%>
+
 <%
-	String s = (String)session.getAttribute("LOGIN");
-	if(!s.equals("Y"))
-	{
-		out.println("login again please......");
-		return;
-	}
-	OperateMySql om = new OperateMySql();
-	UpdateLog[] ul = om.GetUpdateLog();
-	if(ul == null)
-	{
-		out.println("error occured");
-		return;
-	}
-	
+
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -33,15 +20,11 @@ a:link,a:visited,a:hover,a:active {color: #000000; text-decoration:none;}
 <body>
 <ul>
 <%
-	for(int i=0;i<ul.length;i++)
-	{
-		if(ul[i].sLog.length() == 0)
-			break;
-		String s1 = ul[i].sTime + ":" + ul[i].sLog;
+
  %>
-	<li>&middot;<%=s1 %></li>
+
 <%
-	}
+
 %>
 </ul>
 </body>

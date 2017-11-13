@@ -4,7 +4,7 @@ public class Admin {
     public String userId;
     public String userName;
     public String userPwd;
-    public String userStatus;
+    public int userStatus;
 
     public String getUserId() {
         return userId;
@@ -30,11 +30,11 @@ public class Admin {
         this.userPwd = userPwd;
     }
 
-    public String getUserStatus() {
+    public int getUserStatus() {
         return userStatus;
     }
 
-    public void setUserStatus(String userStatus) {
+    public void setUserStatus(int userStatus) {
         this.userStatus = userStatus;
     }
 }
