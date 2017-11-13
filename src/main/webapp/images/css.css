@@ -1,0 +1,59 @@
+@charset "gb2312";
+/* CSS Document */
+body {font-size:12px;margin:0px;}
+
+iframe {border:0px;}
+a:link, a:visited, a:hover {text-decoration:none;}
+.top_1 {height:21px;background-image:url(top_1.jpg);background-position:right; background-repeat:no-repeat;}
+.top_2 {background-color:#053a74;height:69px;}
+.logo {float:left;}
+.menu {float:right;padding:14px 30px;}
+.menu img {margin-left:10px;}
+.top_3 {height:43px;background-image:url(top_3_bg.jpg); background-repeat:repeat-x;}
+.top_3_1 {float:left;margin:10px 0px 0px 38px;}
+.top_3_2 {float:left;margin:11px 20px 0px 10px;border:#0d75ae 1px solid;background-color:#3d9cd0;}
+#serch {float:left;width:529px;height:20px;border:0px;}
+.serch_btn {float:left;width:23px; height:20px; background-image:url(serch_btn.jpg);}
+.serch {float:left;width:552px;margin:4px;border:1px solid #38599c;}
+.text {float:right;margin:10px 15px 0px 90px;color:#FFFFFF;}
+.text span {width:42px;}
+.text a:link, .text a:visited {color: #FFFFFF;}
+.top_4 {background-color:#085091;height:7px;}
+
+
+.left_bg1 { background-image:url(left_bg1.jpg); background-repeat:no-repeat;font-size:14px; font-weight:bold;padding:0px 0px 0px 20px;line-height:28px;}
+#home {margin:0px 0px 0px 12px;}
+.left_bg2 {background-image:url(left_bg2.jpg); background-repeat:repeat-y;font-size:14px;line-height:30px;padding:0px 0px 0px 20px;}
+.left_bg2 a:link, .left_bg2 a:visited {color: #FFFFFF;}
+
+
+.main_1 {background-color:#cdedff;padding:0px 0px 20px 0px;}
+.main_left {float:left; background-image:url(main_left.jpg); width:7px; height:319px;}
+.main_middle {float:left;background-image:url(main_middle.jpg); background-repeat:repeat-x;width:95%;height:319px;}
+.main_right {float:left;background-image:url(main_right.jpg); width:10px; height:319px;}
+
+.mian_2 {background-color:#cdedff;height:682px;padding:0px 0px 0px 25px;}
+.mian {background-color:#cdedff;float:left;width:49%;}
+.title {background-color:#0467c2;margin:10px 0px 0px 0px;height:30px;}
+.title_1 {float:left;}
+.title_2 {float:right;background-image:url(title_2.jpg); width:6px; height:30px;}
+
+.user_pic {float:left;margin:20px 0px 0px 20px;padding:1px;border:1px #bbbbbb solid;}
+.user_info {float:left; list-style-type:none;margin:20px 0px 0px 20px; line-height:40px;}
+.phpinfo { line-height:25px;list-style-type:none;margin:20px 0px 0px 20px;}
+
+
+.mian_4 {background-color: #cdedff;height: 100%;padding: 10px 0px;}
+.btn {font-size: 12px;background: url("button_bg.gif");border: 1px solid #BDC5CA;height: 25px;color: #333333;}
+.td {BORDER-bottom: #BBDCF1 1px solid;border-bottom: 1px solid rgb(187, 220, 241);}
+.page {float:right;}
+.page a:hover {text-decoration: underline;color: #cc0000;}
+.page a {font-size: 12px;color: #000000;}
+
+.login {width:941px;height:381px;margin:110px auto 0 auto;}
+.login_1 {width:941px;height:181px;background-image:url(login_1.jpg);}
+.login_2 {width:941px;height:200px;background-image:url(login_2.jpg);}
+.login_input {padding:15px 0px 0px 415px;}
+.login_input1 {padding:6px 0px 0px 415px;}
+.dlk {color:#ffffff;height:16px;width:105px;border:#83c5de 1px solid; background-color:#292929;}
+.login_btn {background:url(login_btn.jpg);width:49px;height:18px;margin:0px 0px 0px 3px;color:#ffffff;font-size:12px;}

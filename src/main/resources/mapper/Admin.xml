@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clt.sealmanager.dao.IAdminDao">
+
+    <select id="findAdminById" parameterType="String" resultType="Admin">
+        SELECT * FROM ADMINS WHERE USERID =#{id}
+    </select>
+
+    <!--<select id="findAllAdmin" resultMap="Admin">-->
+        <!--SELECT * FROM ADMINS-->
+    <!--</select>-->
+
+    <insert id="addAdmin" parameterType="Admin" >
+        INSERT INTO USER(userid,username, userpwd,userstatus)
+        VALUES(#{userId}, #{userName}, #{userPwd}, #{userStatus})
+    </insert>
+
+</mapper>

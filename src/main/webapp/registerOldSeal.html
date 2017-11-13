@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<link href="images/css.css" rel="stylesheet" type="text/css" />
+<title>现有印章注册</title>
+<style>
+body {
+	background-image:url(images/bottom.jpg); background-repeat:repeat-x;
+	font-family:"微软雅黑", "宋体", sans-serif;
+}
+</style>
+</head>
+
+<body>
+<p>
+<object classid="clsid:8F6C59C0-BD5B-4F90-8827-526BFB5EBB44" id="ESSWebSign1" >
+</object>
+</p>
+<h2>请插入电子签章UK后，点击“签章”按钮</h2>
+<h2>待签署成功后（页面上显示出印章图像或手写签名图像）</h2>
+<h2>点击“提交”按钮完成操作</h2>
+
+<form name="form1" method="post" action="registerOldSealOver.jsp">
+<input type="hidden"  name="signData" />
+<input type="hidden" name="imgID" value=""/>
+<input type="hidden" name="imgData" />
+<input type=button name="B1" value="签章" onclick="mySubmit()" />&nbsp; <input type="submit" name="B2" value="提交" />
+</form>
+
+<script language="javascript">
+	function mySubmit()
+	{
+		if(ESSWebSign1.SignData("123456"))
+		{
+			ESSWebSign1.Visible = true;
+			form1.signData.value = ESSWebSign1.GetEncodedData();
+			form1.imgID.value = ESSWebSign1.GetImageIdentity();
+			form1.imgData.value = ESSWebSign1.GetImageData();
+		}else
+		{
+			alert(ESSWebSign1.GetErrorMsg());
+		}
+	}
+</script>
+</body>
+</html>
