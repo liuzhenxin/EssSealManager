@@ -48,15 +48,18 @@ public class LoginController {
     public String login(@ModelAttribute("SpringWeb")Admin admin,
                              ModelMap model,HttpSession session) {
         adminDao = new AdminDao();
+
         Admin login_admin = adminDao.findAdminById(admin.getUserId());
 
-        if(admin.getUserPwd().equals(login_admin.getUserPwd())){
-            session.setAttribute("userId", admin.getUserId());
+        if(login_admin!= null){
+            if(admin.getUserPwd().equals(login_admin.getUserPwd())){
+                session.setAttribute("userId", admin.getUserId());
+            }else{
+                return "error";
+            }
         }else{
             return "error";
         }
-//        model.addAttribute("userName", login_admin.getUserName());
-//        model.addAttribute("userId", login_admin.getUserId());
         return "index2";
     }
 
@@ -96,7 +99,6 @@ public class LoginController {
         }
         return null;
     }
-
 
     /**
      * 退出系统

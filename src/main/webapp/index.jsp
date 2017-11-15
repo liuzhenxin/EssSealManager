@@ -4,7 +4,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="images/css.css" rel="stylesheet" type="text/css" />
-
 <title>ESS电子签章签名管理系统</title>
 <style>
 * { margin:0; padding:0; border:0;}
@@ -28,7 +27,33 @@ body {background:#016aa9;}
       </div>
     </form>
   </div>
+  <%--<button id="my" onclick="ajaxTest()" type="button">check me!</button>--%>
 <script>
+
+//function ajaxTest(){
+//    var data = {'userId':"321",'userName':"123"};
+//    alert("js");
+//    $("#my").click.alert("jq");
+//    $.ajax({
+//        data:data,
+//        type:"POST",
+//        dataType: 'json',
+//        url:"ajax",
+//        error:function(data){
+//            alert("出错了！！:"+data);
+//        },
+//        success:function(data){
+//            alert("success:"+data);
+////            $("#result").html(data.msg) ;
+//        }
+//    });
+//
+//}
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").css("background-color","red");
+    });
+});
 </script>
 </body>
 </html>

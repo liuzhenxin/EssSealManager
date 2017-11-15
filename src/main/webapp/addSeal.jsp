@@ -67,7 +67,7 @@ body {
 	<object classid="clsid:18926B47-3586-4D9B-8263-95F53C603282" id="ESSSealCenter1" width="1" height="1">
 	</object>
 <div class="mian_4">
-  <form id="form1" name="form1" method="post" action="addSeal.jsp">
+  <form id="form1" name="form1" method="post" action="/seal/addseal">
     <table width="95%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#666666">
       <tbody>
         <tr>
@@ -153,6 +153,16 @@ body {
 			<%--}--%>
 		}
 		setTimeout("dispM()",500);
+        form1.sealID.value = 123;
+        form1.sealName.value = 123;
+        form1.certCN.value = 123;
+        form1.certIssuer.value = 123;
+        form1.sealPath.value = 123;
+        form1.endTime.value = 123;
+        form1.sealAuth.value = 123;
+        form1.keyWords.value = 123;
+        form1.cltName.value = 123;
+        form1.sealOwner.value = 123;
 	</script>
 	
 </body>

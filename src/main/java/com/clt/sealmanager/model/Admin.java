@@ -1,10 +1,11 @@
 package com.clt.sealmanager.model;
 
 public class Admin {
-    public String userId;
-    public String userName;
-    public String userPwd;
-    public int userStatus;
+
+    private String userId;
+    private String userName;
+    private String userPwd;
+    private int userStatus;
 
     public String getUserId() {
         return userId;

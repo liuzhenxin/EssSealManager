@@ -1,15 +1,15 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
-<%@ page import="com.clt.mysql.*"%>
+<%--<%@ page import="com.clt.mysql.*"%>--%>
 <%
 	
-	String s = (String)session.getAttribute("LOGIN");
-	if(!s.equals("Y"))
-	{
-		out.println("login again please......");
-		return;
-	}
-	OperateMySql om = new OperateMySql();
-	MakeSealLog[] ms = om.GetMakeSealLog("2009-12-31","2017-12-31");
+//	String s = (String)session.getAttribute("LOGIN");
+//	if(!s.equals("Y"))
+//	{
+//		out.println("login again please......");
+//		return;
+//	}
+//	OperateMySql om = new OperateMySql();
+//	MakeSealLog[] ms = om.GetMakeSealLog("2009-12-31","2017-12-31");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -53,31 +53,19 @@ body {
                   </table></td>
               </tr>         
 
-<% 
-	if(ms != null)
-	{
-	for(int i=0;i<ms.length;i++)
-	{
 
-			
- %>
               <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='<?=$bg?>'" bgcolor="<?=$bg?>" >
                 <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
                     <tbody>
                       <tr>
-                        <td width="15%" class="td"><a href="changeSeal.jsp?sealID=<%=ms[i].sealID %>" target="view_frame"><%=ms[i].sealID %></a></td>
-                        <td width="15%" class="td"><%=ms[i].sealName %></td>
-                        <td width="15%" class="td"><%=ms[i].beginTime %></td>
+                        <td width="15%" class="td"><a href="changeSeal.jsp?sealID=sealID" target="view_frame">sealID</a></td>
+                        <td width="15%" class="td">sealName</td>
+                        <td width="15%" class="td">beginTime</td>
                       </tr>
                     </tbody>
                   </table></td>
               </tr>
-              
- <%
- 	}
- 	}
-  %>       
- 
+
             </tbody>
           </table></td>
       </tr>

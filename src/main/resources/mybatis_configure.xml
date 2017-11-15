@@ -21,5 +21,6 @@
 
     <mappers >
         <mapper resource="mapper/Admin.xml"/>
+        <mapper resource="mapper/Seal.xml"/>
     </mappers>
 </configuration>

@@ -1,26 +1,26 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
-<%@ page import="com.clt.mysql.*"%>
+<%--<%@ page import="com.clt.mysql.*"%>--%>
 <%
 	
-	String s = (String)session.getAttribute("LOGIN");
-	if(!s.equals("Y"))
-	{
-		out.println("login again please......");
-		return;
-	}
-	OperateMySql om = new OperateMySql();
-	String sid = request.getParameter("IID");
-	if(sid != null )
-	{
-		if(sid.length() > 0)
-		{
-			out.println(sid);
-			int i = Integer.parseInt(sid);
-			om.DelRemoteReg(i);
-		}
-	}
-	
-	SealInfo[] si = om.GetRemoteRegInfo();
+//	String s = (String)session.getAttribute("LOGIN");
+//	if(!s.equals("Y"))
+//	{
+//		out.println("login again please......");
+//		return;
+//	}
+//	OperateMySql om = new OperateMySql();
+//	String sid = request.getParameter("IID");
+//	if(sid != null )
+//	{
+//		if(sid.length() > 0)
+//		{
+//			out.println(sid);
+//			int i = Integer.parseInt(sid);
+//			om.DelRemoteReg(i);
+//		}
+//	}
+//
+//	SealInfo[] si = om.GetRemoteRegInfo();
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -69,10 +69,10 @@ body {
               </tr>         
 
 <% 
-	if(si != null)
-	{
-	for(int i=0;i<si.length;i++)
-	{
+//	if(si != null)
+//	{
+//	for(int i=0;i<si.length;i++)
+//	{
 
 			
  %>
@@ -80,21 +80,21 @@ body {
                 <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
                     <tbody>
                       <tr>
-                        <td width="15%" class="td"><%=si[i].sealName %></td>
-                        <td width="15%" class="td"><%=si[i].sealCltName %></td>
-                        <td width="15%" class="td"><%=si[i].sealEndTime %></td>
-                        <td width="15%" class="td"><%=si[i].sealSB %></td>
-                        <td width="15%" class="td"><%=si[i].sealCN %></td>
-                        <td width="15%" class="td"><%=si[i].sealID %></td>
-                        <td width="10%" class="td"><input type="button" name="button1" value="处理"  class="btn" onclick="actIt(<%=si[i].sealStatus %>)"><input type="button" name="button2" value="删除"  class="btn" onclick="del(<%=si[i].sealStatus %>)" /></td>
+                        <td width="15%" class="td">sealName</td>
+                        <td width="15%" class="td">sealCltName</td>
+                        <td width="15%" class="td">sealEndTime</td>
+                        <td width="15%" class="td">sealSB</td>
+                        <td width="15%" class="td">sealCN</td>
+                        <td width="15%" class="td">sealID</td>
+                        <td width="10%" class="td"><input type="button" name="button1" value="处理"  class="btn" onclick="actIt(sealStatus)"><input type="button" name="button2" value="删除"  class="btn" onclick="del(sealStatus)" /></td>
                       </tr>
                     </tbody>
                   </table></td>
               </tr>
               
  <%
- 	}
- 	}
+// 	}
+// 	}
   %>       
  
             </tbody>
@@ -118,7 +118,7 @@ body {
 	{
 		form1.action = "addRegSeal.jsp";
 		form1.IID.value = i;
-		form1.submit();		
+		form1.submit();
 	};
  </script>
 </body>

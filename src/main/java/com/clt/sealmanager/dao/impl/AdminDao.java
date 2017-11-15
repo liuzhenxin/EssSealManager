@@ -8,6 +8,9 @@ import java.util.List;
 
 import static com.clt.sealmanager.base.MyBatisSession.getSqlSession;
 
+/**
+ * 数据库处理基本单元
+ */
 public class AdminDao implements IAdminDao {
     private SqlSession session;
     private IAdminDao getAdminDao(){
@@ -50,7 +53,6 @@ public class AdminDao implements IAdminDao {
             session.close();
         }
     }
-
     @Override
     public void updateAdmin(Admin admin) {
 

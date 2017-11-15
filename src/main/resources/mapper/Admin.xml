@@ -28,6 +28,6 @@
     </update>
 
     <delete id="deleteAdmin" parameterType="String">
-        DELETE FROM USER WHERE userid = #{id}
+        DELETE FROM ADMINS WHERE userid = #{id}
     </delete>
 </mapper>
