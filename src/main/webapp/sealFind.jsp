@@ -12,6 +12,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="images/css.css" rel="stylesheet" type="text/css" />
+  <script type="javascript" src="js/jquery-3.2.1.min.js">
+
+  </script>
 <title>印章查询</title>
 <style>
 body {
@@ -22,7 +25,7 @@ body {
 </head>
 <body>
 <div class="mian_4">
-  <form id="form1" name="form1" method="post" action="sealList.jsp">
+  <form id="form1" name="form1" method="post" action="/seal/sealList">
     <table width="95%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#666666">
       <tbody>
         <tr>
@@ -33,12 +36,12 @@ body {
               <tbody>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#F1F5F8'" bgcolor="#F1F5F8">
                   <td height="25" width="34%">印章名称</td>
-                  <td width="66%"><input name="sealname" type="text" size="30" />
+                  <td width="66%"><input name="sealName" type="text" size="30" />
                     &nbsp;</td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
                   <td height="25">&nbsp;</td>
-                  <td><input type="button" name="button" id="button" value="查询" onclick="mySub()" /></td>
+                  <td><input type="submit" name="button" id="button" value="查询"  /></td>
                 </tr>
               </tbody>
             </table></td>
@@ -50,16 +53,17 @@ body {
 <script language="javascript">
 	function mySub()
 	{
-		if(form1.sealname.value == "")
-		{
-			if(confirm("未输入印章名称，将查询所有印章，是否继续？"))
-			{
-				form1.submit();
-			}
-		}else
-		{
-			form1.submit();
-		}
+//		if(form1.sealName.value == "")
+//		{
+//			if(confirm("未输入印章名称，将查询所有印章，是否继续？"))
+//			{
+//				form1.submit();
+//			}
+//		}else
+//		{
+//			form1.submit();
+//		}
+
 	}
 </script>
 </body>

@@ -1,19 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
 <%--<%@ page import="com.clt.mysql.*"%>--%>
 <%
-//	String s = (String)session.getAttribute("LOGIN");
-//	if(!s.equals("Y"))
-//	{
-//		out.println("login again please......");
-//		return;
-//	}
-//	OperateMySql om = new OperateMySql();
-//	SystemInfo si = om.GetSystemInfo();
-//	if(si == null)
-//	{
-//		out.println("error occured");
-//		return;
-//	}
+
 //	String sAllAuth = om.GetUsedAuthProduction();
 //	Admins[] ad = om.GetAdminInfo();
 //	if(ad == null)

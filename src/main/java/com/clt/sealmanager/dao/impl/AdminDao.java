@@ -56,9 +56,20 @@ public class AdminDao implements IAdminDao {
     @Override
     public void updateAdmin(Admin admin) {
 
+        try {
+            getAdminDao().updateAdmin(admin);
+            session.commit();
+        } finally {
+            session.close();
+        }
     }
     @Override
     public void deleteAdmin(String id) {
-
+        try {
+            getAdminDao().deleteAdmin(id);
+            session.commit();
+        } finally {
+            session.close();
+        }
     }
 }

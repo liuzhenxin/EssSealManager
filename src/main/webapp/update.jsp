@@ -19,13 +19,7 @@ a:link,a:visited,a:hover,a:active {color: #000000; text-decoration:none;}
 
 <body>
 <ul>
-<%
 
- %>
-
-<%
-
-%>
 </ul>
 </body>
 </html>

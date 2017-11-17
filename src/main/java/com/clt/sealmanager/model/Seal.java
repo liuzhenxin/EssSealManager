@@ -2,7 +2,7 @@ package com.clt.sealmanager.model;
 
 public class Seal {
     //印章编号
-    private String sealID;
+    private String sealId;
     //印章名称
     private String sealName;
     //印章所属部门
@@ -24,12 +24,12 @@ public class Seal {
     //印章状态
     private String status;
 
-    public String getSealID() {
-        return sealID;
+    public String getSealId() {
+        return sealId;
     }
 
-    public void setSealID(String sealID) {
-        this.sealID = sealID;
+    public void setSealId(String sealID) {
+        this.sealId = sealID;
     }
 
     public String getSealName() {

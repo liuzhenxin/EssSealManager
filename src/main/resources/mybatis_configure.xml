@@ -22,5 +22,6 @@
     <mappers >
         <mapper resource="mapper/Admin.xml"/>
         <mapper resource="mapper/Seal.xml"/>
+        <mapper resource="mapper/Register.xml"/>
     </mappers>
 </configuration>

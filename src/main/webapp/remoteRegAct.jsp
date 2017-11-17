@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
 <%--<%@ page import="com.clt.mysql.*"%>--%>
 <%
@@ -66,37 +67,26 @@ body {
                       </tr>
                     </tbody>
                   </table></td>
-              </tr>         
-
-<% 
-//	if(si != null)
-//	{
-//	for(int i=0;i<si.length;i++)
-//	{
-
-			
- %>
+              </tr>
               <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='<?=$bg?>'" bgcolor="<?=$bg?>" >
                 <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
                     <tbody>
+
+                    <c:forEach items="${registers}" var="item">
                       <tr>
-                        <td width="15%" class="td">sealName</td>
-                        <td width="15%" class="td">sealCltName</td>
-                        <td width="15%" class="td">sealEndTime</td>
-                        <td width="15%" class="td">sealSB</td>
-                        <td width="15%" class="td">sealCN</td>
-                        <td width="15%" class="td">sealID</td>
+                        <td width="15%" class="td">${item.aName}</td>
+                        <td width="15%" class="td">${item.aPhone}</td>
+                        <td width="15%" class="td">${item.sTime}</td>
+                        <td width="15%" class="td">${item.certSubject}</td>
+                        <td width="15%" class="td">${item.certCn}</td>
+                        <td width="15%" class="td">${item.certHash}</td>
                         <td width="10%" class="td"><input type="button" name="button1" value="处理"  class="btn" onclick="actIt(sealStatus)"><input type="button" name="button2" value="删除"  class="btn" onclick="del(sealStatus)" /></td>
                       </tr>
+                    </c:forEach>
+
                     </tbody>
                   </table></td>
               </tr>
-              
- <%
-// 	}
-// 	}
-  %>       
- 
             </tbody>
           </table></td>
       </tr>

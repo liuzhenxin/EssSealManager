@@ -4,6 +4,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="images/css.css" rel="stylesheet" type="text/css" />
+  <script type="javascript" src="js/jquery-3.2.1.min.js">
+
+  </script>
 <title>ESS电子签章签名管理系统</title>
 <style>
 * { margin:0; padding:0; border:0;}
@@ -27,7 +30,7 @@ body {background:#016aa9;}
       </div>
     </form>
   </div>
-  <%--<button id="my" onclick="ajaxTest()" type="button">check me!</button>--%>
+  <button id="my" type="button">check me!</button>
 <script>
 
 //function ajaxTest(){
@@ -49,11 +52,7 @@ body {background:#016aa9;}
 //    });
 //
 //}
-$(document).ready(function(){
-    $("button").click(function(){
-        $("p").css("background-color","red");
-    });
-});
+
 </script>
 </body>
 </html>

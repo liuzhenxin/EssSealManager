@@ -1,5 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
-<%@ page import="java.net.URLEncoder"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -27,75 +27,19 @@ body {
               <tr>
                 <td bgcolor="#FFFFFF"></td>
               </tr>
-<%--<% --%>
-	<%--String sealName = request.getParameter("sealname");--%>
-	<%--if(sealName == null)--%>
-		<%--sealName = "";--%>
-	<%--else--%>
-	<%--{--%>
-		<%--sealName = new String(sealName.getBytes("ISO8859-1"),"UTF8");--%>
-<%--//		System.out.println(sealName);--%>
-	<%--}--%>
-	<%--s = request.getParameter("iB");--%>
-	<%--int iB = 0;--%>
-	<%--if(s != null)--%>
-		<%--iB = Integer.parseInt(s);--%>
-	<%--s = request.getParameter("iE");--%>
-	<%--int iE = 20;--%>
-	<%--if(s != null)--%>
-		<%--iE = Integer.parseInt(s);--%>
-	<%----%>
-	<%--OperateMySql om = new OperateMySql();--%>
-	<%--SealInfo[] seals = om.FindSeal(sealName, iB, iE);--%>
-	<%--boolean blOver = false;--%>
-	<%--for(int i=0;i<20;i++)--%>
-	<%--{--%>
-		<%--if(seals[i].sealID.length() == 0)--%>
-		<%--{--%>
-			<%--blOver = true;--%>
-			<%--break;--%>
-		<%--}--%>
-		<%--String sStatus = "有效";--%>
-		<%--if(seals[i].sealStatus == 0)--%>
-			<%--sStatus = "无效";--%>
-
-		<%----%>
-		<%--String sID = seals[i].sealID;--%>
-		<%--sID = URLEncoder.encode(sID,"UTF-8");--%>
-		<%--String sRef = "changeSeal.jsp?sealID=" + sID; 	--%>
-
-<%--%>--%>
-              <tr onmouseover="style.backgroundColor='#EEEEEE'">
+			  <tr onmouseover="style.backgroundColor='#EEEEEE'">
                 <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
                     <tbody>
-                      <tr>
-                        <td class="td" width="33%"><a href=<sRef >>印章名称:seals[i].sealName %></a></td>
-                        <td class="td" width="33%">印章所属部门：=seals[i].sealOwner %></td>
-                        <td class="td">印章状态：=sStatus %></td>
-                      </tr>
+					<c:forEach items="${seals}" var="item">
+						<tr>
+                            <td class="td" width="33%"><a href="">印章名称:${item.sealName}</a></td>
+                            <td class="td" width="33%">印章所属部门：${item.sealOwner}</td>
+                            <td class="td">印章状态：${item.status}</td>
+						</tr>
+					</c:forEach>
                     </tbody>
                 </table></td>
               </tr>
-<%--<%--%>
-	<%--}--%>
-	<%--String sPreHref = "#";--%>
-	<%--String sNextHref = "#";--%>
-	<%--if(blOver == false)--%>
-	<%--{--%>
-		<%--iB = iB + 20;--%>
-		<%--iE = iE + 20;--%>
-		<%--sNextHref = "sealList.jsp?sealname=" + sealName + "&iB=" + Integer.toString(iB) + "&iE=" + Integer.toString(iE);		--%>
-	<%--}--%>
-	<%--if(iB > 20)--%>
-	<%--{--%>
-		<%--iB = iB - 20;--%>
-		<%--iE = iE - 20;--%>
-		<%--sPreHref = "sealList.jsp?sealname=" + sealName + "&iB=" + Integer.toString(iB) + "&iE=" + Integer.toString(iE);		--%>
-	<%--}--%>
-	<%----%>
- <%--%>--%>
-
-
               <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#F1F5F8'" bgcolor="#F1F5F8">
                 <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
                     <tbody>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clt.sealmanager.dao.IRegisterDao">
+
+    <!--<select id="findAdminById" parameterType="String" resultType="com.clt.sealmanager.model.RegisterDao">-->
+        <!--SELECT * FROM ADMINS WHERE USERID =#{id}-->
+    <!--</select>-->
+
+    <select id="findAllRegister" resultType="com.clt.sealmanager.model.Register">
+        SELECT * FROM REMOTEREGISTER
+    </select>
+
+    <!--<insert id="addAdmin" parameterType="com.clt.sealmanager.model.RegisterDao" >-->
+        <!--INSERT INTO ADMINS (userid,username,userpwd,userstatus)-->
+        <!--VALUES(#{userId}, #{userName}, #{userPwd}, #{userStatus})-->
+    <!--</insert>-->
+
+    <!--<update id="updateAdmin" parameterType="com.clt.sealmanager.model.RegisterDao">-->
+        <!--UPDATE ADMINS-->
+        <!--SET-->
+        <!--username = #{userName},-->
+        <!--userpwd = #{userPwd},-->
+        <!--userstatus = #{userStatus}-->
+        <!--WHERE-->
+        <!--userid =-->
+        <!--#{userId}-->
+    <!--</update>-->
+
+    <delete id="deleteRegister" parameterType="String">
+        DELETE FROM REMOTEREGISTER WHERE CERTHASH = #{id}
+    </delete>
+</mapper>

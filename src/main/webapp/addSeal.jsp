@@ -78,7 +78,7 @@ body {
               <tbody>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#F1F5F8'" bgcolor="#F1F5F8">
                   <td height="25" width="34%">印章编号:</td>
-                  <td width="66%"><input name="sealID" type="text" size="30" readonly="readonly"/></td>
+                  <td width="66%"><input name="sealId" type="text" size="30" readonly="readonly"/></td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
                   <td width="34%" height="13">印章名称：</td>

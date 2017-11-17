@@ -3,23 +3,37 @@
 
 <mapper namespace="com.clt.sealmanager.dao.ISealDao">
     <select id="findSealByid" parameterType="String" resultType="com.clt.sealmanager.model.Seal">
-
+        SELECT * FROM SEALINFO WHERE CERTHASH = #{sealId}
+    </select>
+    <select id="findSealByName" parameterType="String" resultType="com.clt.sealmanager.model.Seal">
+        SELECT * FROM SEALINFO WHERE SEALNAME = #{sealName}
+    </select>
+    <select id="findAllSeal" resultType="com.clt.sealmanager.model.Seal">
+                SELECT * FROM SEALINFO
     </select>
     <insert id="addSeal" parameterType="com.clt.sealmanager.model.Seal" >
-        INSERT INTO SEALINFO VALUES(#{sealID},#{certCN},#{certIssuer},#{sealAuth},#{sealPath},#{endTime},#{sealName},#{cltName},#{keyWords},#{sealOwner},#{status})
+        INSERT INTO SEALINFO VALUES(#{sealId},#{certCN},#{certIssuer},#{sealAuth},#{sealPath},#{endTime},#{sealName},#{cltName},#{keyWords},#{sealOwner},#{status})
     </insert>
     <update id="updateSeal" parameterType="com.clt.sealmanager.model.Seal">
---         UPDATE ADMINS
---         SET
---         username = #{userName},
---         userpwd = #{userPwd},
---         userstatus = #{userStatus}
---         WHERE
---         userid =
---         #{userId}
+
+        UPDATE SEALINFO
+        SET
+        certcn = #{certCN},
+        certsubject = #{certIssuer},
+        sealauth = #{sealAuth},
+        sealpath = #{sealPath},
+        sealendtime = #{endTime},
+        sealname = #{sealName},
+        cltname = #{cltName},
+        keywords = #{keyWords},
+        owner = #{sealOwner},
+        status = #{status}
+        WHERE
+        certhash =
+        #{sealId}
     </update>
 
-    <delete id="deleteAdmin" parameterType="String">
-        DELETE FROM USER WHERE userid = #{id}
+    <delete id="deleteSeal" parameterType="String">
+        DELETE FROM SEALINFO WHERE certhash = #{sealId}
     </delete>
 </mapper>
