@@ -1,16 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
-<%--<%@ page import="com.clt.mysql.*"%>--%>
-<%
-
-//	String sAllAuth = om.GetUsedAuthProduction();
-//	Admins[] ad = om.GetAdminInfo();
-//	if(ad == null)
-//	{
-//		out.println("error occured");
-//		return;
-//	}
-%>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -71,7 +59,7 @@ body {background:#cdedff;}
         	<%--if(ad[i].iStatus == 1)--%>
         	<%--{--%>
          <%--%>--%>
-          <%--<li><%=ad[i].sUserName %></li>--%>
+          <li>湿答答</li>
           <%--<%--%>
           	<%--}--%>
          <%--}--%>

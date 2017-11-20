@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
 <%--<%@ page import="com.clt.mysql.*"%>--%>
 <%
@@ -51,21 +52,20 @@ body {
                       </tr>
                     </tbody>
                   </table></td>
-              </tr>         
-
-
-              <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='<?=$bg?>'" bgcolor="<?=$bg?>" >
-                <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
-                    <tbody>
-                      <tr>
-                        <td width="15%" class="td"><a href="changeSeal.jsp?sealID=sealID" target="view_frame">sealID</a></td>
-                        <td width="15%" class="td">sealName</td>
-                        <td width="15%" class="td">beginTime</td>
-                      </tr>
-                    </tbody>
-                  </table></td>
               </tr>
-
+              <c:forEach items="${Logs}" var="item">
+                  <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='<?=$bg?>'" bgcolor="<?=$bg?>" >
+                      <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+                          <tbody>
+                          <tr>
+                              <td width="15%" class="td"><a href="changeSeal.jsp?sealID=sealID" target="view_frame">${item.sealId}</a></td>
+                              <td width="15%" class="td">${item.sealName}</td>
+                              <td width="15%" class="td">${item.sbTime}</td>
+                          </tr>
+                          </tbody>
+                      </table></td>
+                  </tr>
+              </c:forEach>
             </tbody>
           </table></td>
       </tr>
@@ -73,8 +73,25 @@ body {
   </table>
 </div>
 <input type="hidden" name="IID">
+<input type="hidden" name="AtPage">
 
- </form>  
+ </form>
+<form action="/seal/sealList" method="post">
+    <div>
+        <div>
+            <a href="">上一页</a>
+        </div>
+        <div>
+            <span>2</span>
+        </div>
+        <div>
+            <a href="">下一页</a>
+        </div>
+    </div>
+</form>
+
+
+
  <script type="text/javascript">
 	function del(i)
 	{
@@ -89,6 +106,8 @@ body {
 		form1.IID.value = i;
 		form1.submit();		
 	};
+
+
  </script>
 </body>
 </html>

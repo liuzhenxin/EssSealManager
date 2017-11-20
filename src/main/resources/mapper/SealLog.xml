@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.clt.sealmanager.dao.ISealLogDao">
+
+    <select id="findAllSealLog" resultType="com.clt.sealmanager.model.SealLog">
+        SELECT * FROM MAKESEALLOG
+    </select>
+    <select id="findSealLogByLimit" parameterType="int" resultType="com.clt.sealmanager.model.SealLog">
+        select
+         *
+         from MAKESEALLOG
+         limit #{0},#{1}
+    </select>
+    <insert id="addSealLog" parameterType="com.clt.sealmanager.model.SealLog" useGeneratedKeys="true" keyProperty="IID" >
+    INSERT INTO MAKESEALLOG (sealid,sbtime,setime,sealname)
+    VALUES(#{sealId}, #{sbTime}, #{seTime}, #{sealName})
+    </insert>
+
+    <delete id="deleteSealLog" parameterType="String">
+        DELETE FROM MAKESEALLOG WHERE IID = #{id}
+    </delete>
+</mapper>

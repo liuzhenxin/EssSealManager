@@ -30,7 +30,7 @@ body {background:#016aa9;}
       </div>
     </form>
   </div>
-  <button id="my" type="button">check me!</button>
+
 <script>
 
 //function ajaxTest(){

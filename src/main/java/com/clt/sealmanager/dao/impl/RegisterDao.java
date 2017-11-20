@@ -34,6 +34,7 @@ public class RegisterDao implements IRegisterDao {
     public void deleteRegister(String id) {
         try {
             getRegisterDao().deleteRegister(id);
+            session.commit();
         } finally {
             session.close();
         }

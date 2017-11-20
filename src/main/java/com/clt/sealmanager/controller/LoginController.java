@@ -53,6 +53,7 @@ public class LoginController {
                 session.setAttribute("userId", admin.getUserId());
                 return "index2";
             }else{
+                model.addAttribute("message", "登录失败");
                 return "error";
             }
         }
@@ -71,10 +72,11 @@ public class LoginController {
     }
 
     @RequestMapping(value="/admin_add", method = RequestMethod.POST)
-    public String addAdmin(@ModelAttribute("SpringWeb")Admin admin) {
+    public String addAdmin(@ModelAttribute("SpringWeb")Admin admin,ModelMap model) {
         admin.setUserStatus(1);
         adminDao.addAdmin(admin);
-        return "redirect:admin_list";
+        model.addAttribute("message", "添加成功");
+        return "success";
     }
 
     @RequestMapping(value="/changeAdminStatus", method = RequestMethod.POST)

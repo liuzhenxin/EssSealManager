@@ -14,10 +14,9 @@
     <context:component-scan base-package="com.clt.sealmanager.controller"/>
     <!-- 静态资源访问  -->
     <mvc:default-servlet-handler/>
-
-    <!--<mvc:resources mapping="/js/**" location="/js/"/>-->
-    <!--<mvc:resources mapping="/styles/**" location="/css/"/>-->
-    <!--<mvc:resources mapping="/images/**" location="/images/"/>-->
+    <mvc:resources mapping="js/**" location="js/"/>
+    <mvc:resources mapping="styles/**" location="images/"/>
+    <mvc:resources mapping="images/**" location="images/"/>
     <!-- 开启注解  -->
     <mvc:annotation-driven/>
 
@@ -29,15 +28,15 @@
     </bean>
 
 
-    <!--&lt;!&ndash; 配置拦截器 &ndash;&gt;-->
-    <!--<mvc:interceptors>-->
-        <!--&lt;!&ndash; 多个拦截器，顺序执行 &ndash;&gt;-->
-        <!--&lt;!&ndash; 配置登陆拦截器 &ndash;&gt;-->
-        <!--<mvc:interceptor>-->
-            <!--&lt;!&ndash; /** 表示所有的url，包括子url路径 &ndash;&gt;-->
-            <!--<mvc:mapping path="/**"/>-->
-            <!--<bean class="com.clt.sealmanager.base.LoginInterceptor"/>-->
-        <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <!-- 多个拦截器，顺序执行 -->
+        <!-- 配置登陆拦截器 -->
+        <mvc:interceptor>
+            <!-- /** 表示所有的url，包括子url路径 -->
+            <mvc:mapping path="/**"/>
+            <bean class="com.clt.sealmanager.base.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 </beans>
