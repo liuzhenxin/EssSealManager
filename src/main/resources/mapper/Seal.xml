@@ -3,10 +3,10 @@
 
 <mapper namespace="com.clt.sealmanager.dao.ISealDao">
     <select id="findSealByid" parameterType="String" resultType="com.clt.sealmanager.model.Seal">
-        SELECT * FROM SEALINFO WHERE CERTHASH = #{sealId}
+        SELECT * FROM SEALINFO WHERECERTHASH = #{sealId}
     </select>
     <select id="findSealByName" parameterType="String" resultType="com.clt.sealmanager.model.Seal">
-        SELECT * FROM SEALINFO WHERE SEALNAME = #{sealName}
+        SELECT * FROM SEALINFO WHERE SEALNAME LIKE #{sealName}
     </select>
     <select id="findAllSeal" resultType="com.clt.sealmanager.model.Seal">
                 SELECT * FROM SEALINFO

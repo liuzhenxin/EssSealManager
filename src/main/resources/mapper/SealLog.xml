@@ -4,14 +4,21 @@
 <mapper namespace="com.clt.sealmanager.dao.ISealLogDao">
 
     <select id="findAllSealLog" resultType="com.clt.sealmanager.model.SealLog">
-        SELECT * FROM MAKESEALLOG
+        SELECT * FROM MAKESEALLOG ORDER BY IID DESC
     </select>
+
     <select id="findSealLogByLimit" parameterType="int" resultType="com.clt.sealmanager.model.SealLog">
         select
          *
          from MAKESEALLOG
+         ORDER BY IID DESC
          limit #{0},#{1}
     </select>
+
+    <select id="getLogCount" resultType="int">
+        SELECT COUNT(*) FROM MAKESEALLOG
+    </select>
+
     <insert id="addSealLog" parameterType="com.clt.sealmanager.model.SealLog" useGeneratedKeys="true" keyProperty="IID" >
     INSERT INTO MAKESEALLOG (sealid,sbtime,setime,sealname)
     VALUES(#{sealId}, #{sbTime}, #{seTime}, #{sealName})

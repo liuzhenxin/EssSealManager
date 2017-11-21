@@ -76,6 +76,7 @@ public class LoginController {
         admin.setUserStatus(1);
         adminDao.addAdmin(admin);
         model.addAttribute("message", "添加成功");
+        model.addAttribute("action", "admin_add.jsp");
         return "success";
     }
 

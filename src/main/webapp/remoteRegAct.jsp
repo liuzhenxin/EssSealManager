@@ -80,10 +80,12 @@ body {
                         <td width="15%" class="td">${item.certSubject}</td>
                         <td width="15%" class="td">${item.certCn}</td>
                         <td width="15%" class="td">${item.certHash}</td>
-                        <td width="10%" class="td"><input type="button" name="button1" value="处理"  class="btn" onclick="actIt(sealStatus)"><input type="button" name="button2" value="删除"  class="btn" onclick="del(sealStatus)" /></td>
+                        <td width="10%" class="td">
+                            <input type="button" name="button1" value="处理"  class="btn" onclick="actIt(${item.iId})">
+                            <input type="button" name="button2" value="删除"  class="btn" onclick="del(${item.iId})" />
+                        </td>
                       </tr>
                     </c:forEach>
-
                     </tbody>
                   </table></td>
               </tr>
@@ -99,14 +101,14 @@ body {
  <script type="text/javascript">
 	function del(i)
 	{
-		form1.action = "remoteRegAct.jsp";
+		form1.action = "/seal/deleteRegAct";
 		form1.IID.value = i;
 		form1.submit();
 	};
 	
 	function actIt(i)
 	{
-		form1.action = "addRegSeal.jsp";
+		form1.action = "/seal/addRegSeal";
 		form1.IID.value = i;
 		form1.submit();
 	};

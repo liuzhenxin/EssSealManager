@@ -10,6 +10,8 @@ public interface ISealLogDao {
 
     List<SealLog> findSealLogByLimit(int start,int limit);
 
+    int getLogCount();
+
     void addSealLog(SealLog log);
 
     void deleteSealLog(String id);

@@ -45,6 +45,17 @@ public class SealLogDao implements ISealLogDao{
     }
 
     @Override
+    public int getLogCount() {
+        int count = 0;
+        try {
+            count = getSealLogDao().getLogCount();
+        } finally {
+            session.close();
+        }
+        return count;
+    }
+
+    @Override
     public void addSealLog(SealLog log) {
         try {
             getSealLogDao().addSealLog(log);

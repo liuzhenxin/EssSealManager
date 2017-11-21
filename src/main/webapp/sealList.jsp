@@ -41,17 +41,20 @@ body {
                 </table></td>
               </tr>
               <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#F1F5F8'" bgcolor="#F1F5F8">
-                <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+                <td colspan="2">
+                    <table width="100%" border="0" cellpadding="5" cellspacing="0">
                     <tbody>
                       <tr>
                         <td width="51%" height="25" class="td">&nbsp;</td>
                         <td width="49%" class="td"><span class="page"><a href==sPreHref %>>上一页</a><a href==sNextHref %>>下一页</a></span></td>
                       </tr>
                     </tbody>
-                  </table></td>
+                  </table>
+                </td>
               </tr>
             </tbody>
-          </table></td>
+          </table>
+        </td>
       </tr>
     </tbody>
   </table>

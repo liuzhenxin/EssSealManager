@@ -153,16 +153,17 @@ body {
 			<%--}--%>
 		}
 		setTimeout("dispM()",500);
-        form1.sealID.value = 123;
-        form1.sealName.value = 123;
-        form1.certCN.value = 123;
-        form1.certIssuer.value = 123;
-        form1.sealPath.value = 123;
-        form1.endTime.value = 123;
-        form1.sealAuth.value = 123;
-        form1.keyWords.value = 123;
-        form1.cltName.value = 123;
-        form1.sealOwner.value = 123;
+        var form1 = document.getElementById("form1");
+        form1.sealId.value = 1233;
+        form1.sealName.value = 1233;
+        form1.certCN.value = 1233;
+        form1.certIssuer.value = 1233;
+        form1.sealPath.value = 1323;
+        form1.endTime.value = 1233;
+        form1.sealAuth.value = 1233;
+        form1.keyWords.value = 1233;
+        form1.cltName.value = 1233;
+        form1.sealOwner.value = 1233;
 	</script>
 	
 </body>

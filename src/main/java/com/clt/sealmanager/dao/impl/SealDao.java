@@ -30,7 +30,7 @@ public class SealDao implements ISealDao {
     public List<Seal> findSealByName(String sealName) {
         List<Seal> seals = null;
         try {
-            seals = getSealDao().findSealByName(sealName);
+            seals = getSealDao().findSealByName("%"+sealName+"%");
         } finally {
             session.close();
         }

@@ -28,8 +28,6 @@ body {
 </head>
 
 <body>
-<form name="form1" method="post" action="">
-<input type="hidden" name="willlChange" >
 <div class="mian_4">
   <table width="95%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#666666">
     <tbody>
@@ -58,7 +56,7 @@ body {
                       <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
                           <tbody>
                           <tr>
-                              <td width="15%" class="td"><a href="changeSeal.jsp?sealID=sealID" target="view_frame">${item.sealId}</a></td>
+                              <td width="15%" class="td"><a href="/changeSeal.jsp?sealID=sealID" target="view_frame">${item.sealId}</a></td>
                               <td width="15%" class="td">${item.sealName}</td>
                               <td width="15%" class="td">${item.sbTime}</td>
                           </tr>
@@ -72,42 +70,48 @@ body {
     </tbody>
   </table>
 </div>
-<input type="hidden" name="IID">
-<input type="hidden" name="AtPage">
 
- </form>
-<form action="/seal/sealList" method="post">
-    <div>
-        <div>
-            <a href="">上一页</a>
-        </div>
-        <div>
-            <span>2</span>
-        </div>
-        <div>
-            <a href="">下一页</a>
-        </div>
-    </div>
-</form>
+
+
+<%--<form action="/seal/sealLogList" name="form1" method="GET">--%>
+
+    <%--<div>--%>
+        <%--<input type="button"  value="前一页"  class="btn" onclick="mixPage()" />--%>
+    <%--</div>--%>
+    <%--<div>--%>
+        <%--<span id="atPage">${AtPage}</span>--%>
+    <%--</div>--%>
+    <%--<div>--%>
+        <%--<input type="button"  value="后一页"  class="btn" onclick="plusPage()" />--%>
+    <%--</div>--%>
+    <%--<span>共<span id="totalPages">${totalPages}</span>页</span>--%>
+    <%--<input type="hidden" name="AtPage">--%>
+<%--</form>--%>
 
 
 
  <script type="text/javascript">
-	function del(i)
+
+	function plusPage()
 	{
-		form1.action = "remoteRegAct.jsp";
-		form1.IID.value = i;
+
+	    var page = document.getElementById("atPage");
+	    if(){
+
+        }
+		form1.action = "/seal/sealLogList";
+		form1.AtPage.value = page-1;
 		form1.submit();
 	};
 	
-	function actIt(i)
+	function mixPage()
 	{
-		form1.action = "addRegSeal.jsp";
-		form1.IID.value = i;
-		form1.submit();		
+        var page = document.getElementById("atPage");
+
+		form1.action = "/seal/sealLogList";
+		form1.AtPage.value = page+1;
+		form1.submit();
 	};
-
-
  </script>
 </body>
 </html>

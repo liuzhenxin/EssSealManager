@@ -59,6 +59,7 @@ public class SealController {
         registerDao.deleteRegister(seal.getSealId());
 
         model.addAttribute("message", "添加成功");
+        model.addAttribute("action", "/addSeal.jsp");
         return "success";
     }
 
@@ -78,10 +79,42 @@ public class SealController {
 
     @RequestMapping(value = "/sealLogList", method = RequestMethod.GET)
     public String sealLogList(ModelMap model) {
-
-        model.addAttribute("Logs", sealLogDao.findSealLogByLimit(0,15));
+//        int AtPage =0;
+//        int logCount = sealLogDao.getLogCount();
+//        if(AtPage==0){
+//            AtPage=1;
+//        }
+        model.addAttribute("Logs", sealLogDao.findAllSealLog());
+//        model.addAttribute("Logs", sealLogDao.findSealLogByLimit(AtPage-1,15));
+//        model.addAttribute("totalPages", sealLogDao.getLogCount()/15+2);
+//        model.addAttribute("AtPage", AtPage);
 
         return "makeseallog";
+    }
+
+
+    @RequestMapping(value = "/deleteRegAct", method = RequestMethod.POST)
+    public String deleteRegAct(ModelMap model,int IID) {
+
+        registerDao.deleteRegisterByIID(IID);
+
+        return "remoteRegAct";
+    }
+
+    @RequestMapping(value = "/addRegSeal", method = RequestMethod.POST)
+    public String addRegSeal(ModelMap model,int iid) {
+
+        String sRet = "";
+
+        for(Seal seal:sealDao.findAllSeal()){
+            sRet = sRet +seal.getSealAuth();
+        }
+
+        model.addAttribute("register", registerDao.findRegisterById(iid));
+        model.addAttribute("sUsedAuth", sRet);
+        model.addAttribute("sServerAuth", registerDao.getServerAuth());
+
+        return "addRegSeal";
     }
 
     @RequestMapping(value = "/remoteRegAct", method = RequestMethod.GET)

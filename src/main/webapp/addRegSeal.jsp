@@ -1,59 +1,59 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF8"%>
-<%@ page import="com.clt.mysql.*"%>
+<%--<%@ page import="com.clt.mysql.*"%>--%>
 <%
-	String s = (String)session.getAttribute("LOGIN");
-	if(!s.equals("Y"))
-	{
-		out.println("login again please......");
-		return;
-	}
-	OperateMySql om = new OperateMySql();
-	String sSealID = request.getParameter("sealID");
-	if(sSealID != null)
-	{
-		String sealName = request.getParameter("sealName");
-		String certCN  = request.getParameter("certCN");
-		String certIssuer = request.getParameter("certIssuer");
-		String sealPath = request.getParameter("sealPath");
-		String endTime  = request.getParameter("endTime");
-		String sealAuth  = request.getParameter("sealAuth");
-		String keyWords = request.getParameter("keyWords");
-		String cltName = request.getParameter("cltName");
-		String owner = request.getParameter("sealOwner");
-		int i = om.AddSeal(sSealID, sealName, sealAuth, sealPath, endTime, keyWords, certCN, certIssuer,cltName,owner);
-		if(i == 3)
-		{
-			out.println("此证书已经制作过电子印章！");
-		}else
-		{
-			if(i != 0)
-			{
-				out.println("error occured");
-			}else
-				out.println("添加印章成功！");
-		}
-		return;
-	}
-	
-	String sid = request.getParameter("IID");
-	SealInfo si = null;
-	if(sid != null)
-	{
-		si = om.GetRemoteRegInfo(Integer.parseInt(sid));
-	}
-	
-	String sServerAuth = om.GetServerAuth();
-	String sUsedAuth = om.GetUsedAuth();
-	if(sServerAuth == null)
-	{
-		out.println("error occured");
-		return;
-	}
-	if(sServerAuth.length() == 0)
-	{
-		out.println("error occured");
-		return;		
-	}
+//	String s = (String)session.getAttribute("LOGIN");
+//	if(!s.equals("Y"))
+//	{
+//		out.println("login again please......");
+//		return;
+//	}
+//	OperateMySql om = new OperateMySql();
+//	String sSealID = request.getParameter("sealID");
+//	if(sSealID != null)
+//	{
+//		String sealName = request.getParameter("sealName");
+//		String certCN  = request.getParameter("certCN");
+//		String certIssuer = request.getParameter("certIssuer");
+//		String sealPath = request.getParameter("sealPath");
+//		String endTime  = request.getParameter("endTime");
+//		String sealAuth  = request.getParameter("sealAuth");
+//		String keyWords = request.getParameter("keyWords");
+//		String cltName = request.getParameter("cltName");
+//		String owner = request.getParameter("sealOwner");
+//		int i = om.AddSeal(sSealID, sealName, sealAuth, sealPath, endTime, keyWords, certCN, certIssuer,cltName,owner);
+//		if(i == 3)
+//		{
+//			out.println("此证书已经制作过电子印章！");
+//		}else
+//		{
+//			if(i != 0)
+//			{
+//				out.println("error occured");
+//			}else
+//				out.println("添加印章成功！");
+//		}
+//		return;
+//	}
+//
+//	String sid = request.getParameter("IID");
+//	SealInfo si = null;
+//	if(sid != null)
+//	{
+//		si = om.GetRemoteRegInfo(Integer.parseInt(sid));
+//	}
+//
+//	String sServerAuth = om.GetServerAuth();
+//	String sUsedAuth = om.GetUsedAuth();
+//	if(sServerAuth == null)
+//	{
+//		out.println("error occured");
+//		return;
+//	}
+//	if(sServerAuth.length() == 0)
+//	{
+//		out.println("error occured");
+//		return;
+//	}
 	
 //	System.out.println("A:" + sServerAuth.length());
 //	System.out.println("B:" + sUsedAuth);
@@ -88,7 +88,7 @@ body {
               <tbody>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#F1F5F8'" bgcolor="#F1F5F8">
                   <td height="25" width="34%">印章编号:</td>
-                  <td width="66%"><input name="sealID" type="text" size="100" readonly="readonly" value="<%=si.sealID %>" /></td>
+                  <td width="66%"><input name="sealID" type="text" size="100" readonly="readonly" value="${register.certHash}" /></td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
                   <td width="34%" height="13">印章名称：</td>
@@ -96,15 +96,15 @@ body {
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
                   <td width="34%" height="13">印章所属部门：</td>
-                  <td><input name="sealOwner" type="text" size="100" readonly="readonly" value="<%=si.sealOwner %>" /></td>
+                  <td><input name="sealOwner" type="text" size="100" readonly="readonly" value="${register.aOwner}" /></td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#F1F5F8'" bgcolor="#F1F5F8">
                   <td width="34%" height="12">证书信息：</td>
-                  <td><input name="certCN" type="text" size="100" readonly="readonly" value="<%=si.sealCN %>" /></td>
+                  <td><input name="certCN" type="text" size="100" readonly="readonly" value="${register.certCn}" /></td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
                   <td height="25" width="34%">证书颁发者信息</td>
-                  <td><input name="certIssuer" type="text" size="100" readonly="readonly" value="<%=si.sealSB %>" /></td>
+                  <td><input name="certIssuer" type="text" size="100" readonly="readonly" value="${register.certSubject}" /></td>
                 </tr>
                 <tr onmouseover="style.backgroundColor='#EEEEEE'" onmouseout="style.backgroundColor='#FFFFFF'" bgcolor="#FFFFFF">
                   <td height="25" width="34%">特征文件名：</td>
@@ -144,9 +144,9 @@ body {
 	<script type="text/javascript">
 		function dispM()
 		{
-			var scn = "<%=si.sealCN %>";
-			var sb = "<%=si.sealSB %>";
-			ESSSealCenter1.DisplaySecondForm("<%=sUsedAuth%>","<%=sServerAuth%>",scn,sb,"<%=si.sealID %>","<%=si.sealOwner %>");
+			var scn = "${register.certCn}";
+			var sb = "${register.certSubject}";
+			ESSSealCenter1.DisplaySecondForm("${sUsedAuth}","${sServerAuth}",scn,sb,"${register.certHash}","${register.aOwner}");
 			if(ESSSealCenter1.SealName.length > 0)
 			{
 				form1.sealName.value = ESSSealCenter1.SealName;
